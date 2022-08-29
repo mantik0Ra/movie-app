@@ -1,0 +1,82 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+.header {
+    min-width: 100%;
+    min-height: 650px;
+    background-image: url(https://image.tmdb.org/t/p/original/yBm3aFsxBZKQwQOCBgQmOUsFvBO.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #1D1D1D;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 180px;
+}
+
+.genre {
+    background: rgb(0, 0, 0, 0.5);
+    border-radius: 40px;
+    color: #0FEFFD;
+    font-size: 14px;
+    font-weight: 400;
+    width: 100px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.rating {
+    color: white;
+    background: rgb(0, 0, 0, 0.5);
+    width: 30px;
+    margin-left: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+    margin-left: 20px;
+}
+
+.title {
+    font-size: 56px;
+    font-weight: 600;
+    line-height: 0;
+    color: #fff;
+}
+
+
+.description {
+    line-height: 32px;
+    font-weight: 400;
+    font-size: 16px;
+    max-width: 630px;
+    color: white;
+}
+
+.btnPreview {
+    color: #fff;
+    background-color: transparent;
+    border: 2px solid;
+    border-radius: 40px;
+    cursor: pointer;
+    width: 200px;
+    height: 56px;
+    border-left-color: #0FEFFD;
+    border-top-color: #0FEFFD;
+    border-bottom-color: #FF00F5;
+    border-right-color: #FF00F5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
