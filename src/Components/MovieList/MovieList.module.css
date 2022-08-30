@@ -14,8 +14,20 @@
 
 .movieContainers {
     width: 100%;
+    max-height: 500px;
     display: flex;
     gap: 16px;
+    overflow-y: hidden;
     overflow-x: scroll;
 
 }
+
+.movieContainers::-webkit-scrollbar {
+    display: none;
+}
+
+.movieContainers {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
