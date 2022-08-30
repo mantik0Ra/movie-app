@@ -1,40 +1,18 @@
-.container {
-    background-color: #1D1D1D;
-}
 
-.releases {
-    margin-left: 56px;
-    
-}
-
-.article {
-    font-size: 20px;
-    color: white;
-    margin: 24px;
-    margin-left: 50px;
-    font-weight: 500;
-
-}
-
-.movieContainers {
-    display: flex;
-    gap: 16px;
-    flex-wrap: nowrap;
-
-}
 
 .movieContainer {
     display: flex;
-    padding: 24px;
+    padding: 5px;
+    box-sizing: border-box;
     flex-direction: column;
     justify-content: flex-end;
-    gap: 16px;
-    background-image: url(https://image.tmdb.org/t/p/original/yBm3aFsxBZKQwQOCBgQmOUsFvBO.jpg);
-    width: 292px;
+    gap: 16px;  
+    min-width: 292px;
     height: 440px;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position:center;
+    cursor: pointer;
 
 }
 
@@ -55,12 +33,13 @@
 .rating {
     color: white;
     background: rgb(0, 0, 0, 0.5);
-    width: 30px;
+    width: 90px;
+    border-radius: 40px;
     margin-left: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 20px;
+    height: 25px;
     
     
 }
@@ -71,5 +50,13 @@
     line-height: 1;
     color: #fff;
     margin: 0;
+    background: rgb(0, 0, 0, 0.5);
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 40px;
+    min-width: 280px;
+    text-align: center;
 
 }
