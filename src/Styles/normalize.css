@@ -3,6 +3,10 @@ html {
     -webkit-text-size-adjust: 100%; /* 2 */
   }
 
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
   .App {
     min-height: 500px;
     background-color: #1D1D1D;

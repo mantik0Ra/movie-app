@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import PostService from "../API/PostService";
 import Header from "../Components/Header/Header";
 import MovieList from "../Components/MovieList/MovieList";
-import Nav from "../Components/Nav/Nav";
 import "../Styles/normalize.css";
 
 function Main() {

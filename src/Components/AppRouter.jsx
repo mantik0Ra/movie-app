@@ -6,9 +6,9 @@ import Main from "../Pages/Main";
 export default function AppRouter() {
   return (
     <Routes>
-        <Route path="/details" element={<Details/>}/>
         <Route path="/main" element={<Main/>}/>
         <Route path="/*" element={<Navigate to="/main" replace />} />
+        <Route path="/details/:id" element={<Details/>}/>
     </Routes>
   )
 }
