@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import PostService from "../API/PostService";
+import Footer from "../Components/Footer/Footer";
 import Header from "../Components/Header/Header";
 import MovieList from "../Components/MovieList/MovieList";
 import "../Styles/normalize.css";
@@ -28,25 +29,13 @@ function Main() {
     getUpcoming();
   }, []);
 
-  async function getTvShow() {
-    const resp = await PostService.getTvShow();
-    setTvShow(resp.data.results);
-  }
-
-  useEffect(() => {
-    getTvShow();
-  }, []);
-
-
-  
-  
-
+ 
   return (
     <div className="App">
       <Header/>
       <MovieList title={"New Releases"} resp={newReleases}/>
       <MovieList title={"Top Rated"} resp={upcoming}/>
-      <MovieList title={"TV Shows"} resp={tvShow}/>
+      <Footer/>
     </div>
   );
 }

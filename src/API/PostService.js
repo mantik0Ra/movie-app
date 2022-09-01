@@ -6,11 +6,7 @@ export default class PostService {
         return response
     }
 
-    static async getTvShow() {
-        const response = await axios.get("https://api.themoviedb.org/3/tv/popular?api_key=132a5d971081c7edc27050e667052636&language=en-US&page=1");
-        return response
-    }
-
+   
     static async getNewReleases() {
         const response = await axios.get("https://api.themoviedb.org/3/movie/popular?api_key=132a5d971081c7edc27050e667052636&language=en-US&page=1");
         return response
@@ -22,7 +18,12 @@ export default class PostService {
     }
 
     static async getFullCastByID(movie_id) {
-        const response = await axios.get(`https://imdb-api.com/en/API/FullCast/k_y5zili3z/${movie_id}`);
+        const response = await axios.get(`https://api.themoviedb.org/3/movie/${movie_id}/credits?api_key=132a5d971081c7edc27050e667052636&language=en-US`);
+        return response
+    }
+
+    static async getSimilarMovies(movie_id) {
+        const response = await axios.get(`https://api.themoviedb.org/3/movie/${movie_id}/similar?api_key=132a5d971081c7edc27050e667052636&language=en-US&page=1`);
         return response
     }
 

@@ -1,0 +1,41 @@
+.sectionOverview {
+    margin-top: 35px;
+    min-height: 200px;
+    width: 100%;
+    padding-left: 200px;
+    padding-right: 200px;
+    margin-bottom: 100px;
+
+}
+
+.containerOverview {
+    
+    margin-top: 100px;
+    padding: 0;
+    border-bottom: 2px solid #FFFFFF1A;
+}
+
+.btnOverview {
+    background-color: transparent;
+    width: 100px;
+    height: 30px;
+    box-sizing: border-box;
+    border: none;
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+    display: flex;
+    padding: 0;
+    justify-content: flex-start;
+    border-bottom: rgb(238, 192, 92) 2px solid;
+    
+}
+
+.overview {
+    color: hsla(0,0%,100%,.96);
+    opacity: .86;
+    max-width: 600px;
+    font-size: 23px;
+    font-weight: 400;
+
+}
