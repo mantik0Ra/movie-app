@@ -7,17 +7,16 @@ import "../Styles/normalize.css";
 
 function Main() {
 
-  const [newReleases, setNewReleases] = useState([]);
+  const [NowPlaying, setNowPlaying] = useState([]);
   const [upcoming, setUpcoming] = useState([]);
-  const [tvShow, setTvShow] = useState([]);
 
-  async function getNewReleases() {
-    const resp = await PostService.getNewReleases();
-    setNewReleases(resp.data.results);
+  async function getNowPlaying() {
+    const resp = await PostService.getNowPlaying();
+    setNowPlaying(resp.data.results);
   }
 
   useEffect(() => {
-    getNewReleases();
+    getNowPlaying();
   }, []);
 
   async function getUpcoming() {
@@ -33,7 +32,7 @@ function Main() {
   return (
     <div className="App">
       <Header/>
-      <MovieList title={"New Releases"} resp={newReleases}/>
+      <MovieList title={"Now Playing"} resp={NowPlaying}/>
       <MovieList title={"Top Rated"} resp={upcoming}/>
       <Footer/>
     </div>

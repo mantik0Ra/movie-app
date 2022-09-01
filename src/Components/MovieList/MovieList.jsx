@@ -9,8 +9,8 @@ export default function MovieList({resp, title}) {
             <section className={cl.releases}>
                 <article className={cl.article}>{title} {'>'}</article>
                 <div className={cl.movieContainers}>
-                    {resp.map(release => 
-                        <MovieContainer key={release.id} props={[release.poster_path, (release.release_date ? release.release_date : release.first_air_date), release.vote_average, (release.title ? release.title : release.name), release.id]}/>)}
+                    {resp.map(item => 
+                        <MovieContainer key={item.id} props={[item.poster_path, (item.release_date ? item.release_date : item.first_air_date), item.vote_average, (item.title ? item.title : item.name), item.id]}/>)}
                 </div>
             </section>
         </div>
