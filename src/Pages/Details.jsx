@@ -44,6 +44,7 @@ export default function Details() {
         getSimilarMovies(params.id);
     }, [params.id])
 
+    console.log(details)
     
     return (
         <div className={cl.container}>

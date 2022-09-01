@@ -4,8 +4,6 @@ import cl from "./HeaderDetails.module.css"
 
 export default function HeaderDetails({props}) {
 
-    console.log(props.fullCast.crew)
-    
     return (
         <header className={cl.header} style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original/${props.details.backdrop_path})` }}>
             <div className={cl.main}>
