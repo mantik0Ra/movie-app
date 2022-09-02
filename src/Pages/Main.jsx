@@ -3,13 +3,15 @@ import PostService from "../API/PostService";
 import Footer from "../Components/Footer/Footer";
 import Header from "../Components/Header/Header";
 import MovieList from "../Components/MovieList/MovieList";
+import Loader from "../Components/UI/Loader/Loader";
 import "../Styles/normalize.css";
 
 
 function Main() {
 
   const [nowPlaying, setNowPlaying] = useState([]);
-  const [upcoming, setUpcoming] = useState([]);
+  const [topRated, setTopRated] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   
   async function getNowPlaying() {
     const resp = await PostService.getNowPlaying();
@@ -17,25 +19,26 @@ function Main() {
   }
 
   useEffect(() => {
-    getNowPlaying();
+    setIsLoading(true)
+    setTimeout(() => {
+      getNowPlaying();
+      setIsLoading(false);
+    }, 500)
   }, []);
 
-  async function getUpcoming() {
-    const resp = await PostService.getUpcoming();
-    setUpcoming(resp.data.results);
+  async function getTopRated() {
+    const resp = await PostService.getTopRated();
+    setTopRated(resp.data.results);
   }
 
   useEffect(() => {
-    getUpcoming();
+    getTopRated();
   }, []);
 
   
   return (
     <div className="App">
-      <Header resp={nowPlaying}/>
-      <MovieList title={"Now Playing"} resp={nowPlaying}/>
-      <MovieList title={"Top Rated"} resp={upcoming}/>
-      <Footer/>
+      {isLoading ? <Loader/> : <><Header resp={nowPlaying} /><MovieList url={"/all"} title={"Now Playing"} resp={nowPlaying} /><MovieList url={"/all"} title={"Top Rated"} resp={topRated} /><Footer /></>}
     </div>
   );
 }

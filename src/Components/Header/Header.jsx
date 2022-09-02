@@ -7,7 +7,7 @@ export default function Header({resp}) {
   
 
   return (
-    <header className={cl.header} style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original/${resp[3] ? resp[3].backdrop_path : ""})` }} >
+    <header className={cl.header} style={{ backgroundImage: resp[3] ? `url(https://image.tmdb.org/t/p/original/${resp[3].backdrop_path}` : "" }} >
         <div className={cl.container}>
             <h1 className={cl.title}>{resp[3] ? resp[3].title : ""}</h1>
             <span className={cl.rating}>Rating: {resp[3] ? resp[3].vote_average : ""}</span>

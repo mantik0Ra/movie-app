@@ -9,7 +9,7 @@ export default function Nav() {
         <div className={cl.container}>
             <Link to="/main"><NavButton props={<i className="fa-solid fa-house"></i>}></NavButton></Link>
             <NavButton props={<i className="fa-solid fa-bookmark"></i>}></NavButton>
-            <NavButton props={<i className="fa-solid fa-border-all"></i>}></NavButton>
+            <Link to="/all"><NavButton props={<i className="fa-solid fa-border-all"></i>}></NavButton></Link>
         </div>
     </nav>
   )

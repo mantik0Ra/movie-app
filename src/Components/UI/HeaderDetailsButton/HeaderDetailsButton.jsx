@@ -1,8 +1,8 @@
 import React from 'react'
 import cl from "./HeaderDetailsButton.module.css"
 
-export default function HeaderDetailsButton({text}) {
+export default function HeaderDetailsButton({text, increment}) {
   return (
-    <button className={cl.btn}>{text}</button>
+    <button onClick={increment} className={cl.btn}>{text}</button>
   )
 }

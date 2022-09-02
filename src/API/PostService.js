@@ -2,8 +2,13 @@ import axios from "axios";
 import getRandomInt from "../Utils/randomInt";
 
 export default class PostService {
-    static async getUpcoming() {
+    static async getTopRated() {
         let page = getRandomInt(100);
+        const response = await axios.get("https://api.themoviedb.org/3/movie/top_rated?api_key=132a5d971081c7edc27050e667052636&language=en-US&page=" + page);
+        return response
+    }
+
+    static async getAllTopRated(page) {
         const response = await axios.get("https://api.themoviedb.org/3/movie/top_rated?api_key=132a5d971081c7edc27050e667052636&language=en-US&page=" + page);
         return response
     }

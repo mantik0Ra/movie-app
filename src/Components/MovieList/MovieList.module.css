@@ -1,4 +1,4 @@
-.releases {
+.movieList {
     margin-left: 56px;
     
 }
@@ -9,15 +9,22 @@
     margin: 24px;
     margin-left: 50px;
     font-weight: 500;
+    max-width: 150px;
+    cursor: pointer;
+    
 
+}
+
+a {
+    text-decoration: none;
 }
 
 .movieContainers {
     width: 100%;
-    max-height: 500px;
+    min-height: 400px;
     display: flex;
     gap: 16px;
-    overflow-y: hidden;
+    
     overflow-x: scroll;
 
 }

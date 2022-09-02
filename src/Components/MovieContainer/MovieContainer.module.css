@@ -6,8 +6,9 @@
     box-sizing: border-box;
     flex-direction: column;
     justify-content: flex-end;  
-    min-width: 292px;
-    min-height: 340px;
+    width: 292px;
+    height: 400px;
+    z-index: 3;
     background-repeat: no-repeat;
     background-size: 100%;
     background-position:center;

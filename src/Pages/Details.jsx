@@ -5,6 +5,7 @@ import Footer from '../Components/Footer/Footer';
 import HeaderDetails from '../Components/HeaderDetails/HeaderDetails';
 import MovieList from '../Components/MovieList/MovieList';
 import Overview from '../Components/Overview/Overview';
+import Loader from '../Components/UI/Loader/Loader';
 import cl from "../Styles/Details.module.css"
 
 export default function Details() {
@@ -14,6 +15,7 @@ export default function Details() {
     const [details, setDetails] = useState([]);
     const [fullCast, setFullCast] = useState([]);
     const [similarMovies, setSimilarMovies] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
 
     async function getDetails(id) {
         const response = await PostService.getDetailsByID(id);
@@ -37,21 +39,27 @@ export default function Details() {
     async function getSimilarMovies(id) {
         const response = await PostService.getSimilarMovies(id);
         setSimilarMovies(response.data.results);
+        setIsLoading(false);
 
     }
 
     useEffect(() => {
-        getSimilarMovies(params.id);
+        setIsLoading(true)
+        setTimeout(() => {
+            getSimilarMovies(params.id);
+            
+        }, 500)
+        
     }, [params.id])
 
-    console.log(details)
+    
     
     return (
         <div className={cl.container}>
-            <HeaderDetails props={{details, fullCast}}/>
-            <Overview props={{details}}/>
-            <MovieList title={"Similar Movies"} resp={similarMovies}/>
-            <Footer/>
+            {isLoading ? 
+            <Loader/>
+             : 
+             <><HeaderDetails props={{ details, fullCast }} /><Overview props={{ details }} /><MovieList title={"Similar Movies"} resp={similarMovies} /><Footer /></>}
 
         </div>
 
