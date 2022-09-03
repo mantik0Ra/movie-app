@@ -54,6 +54,7 @@ export default function Details() {
         
     }, [params.id])
 
+    console.log(fullCast)
     
     
     return (

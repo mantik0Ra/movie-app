@@ -6,4 +6,18 @@
     margin-top: 20px;
     border-radius: 25px;
     background-color: rgb(238, 192, 92);
+    
+}
+
+.btn:hover {
+    animation: btn .3s linear forwards;
+}
+
+@keyframes btn {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
 }

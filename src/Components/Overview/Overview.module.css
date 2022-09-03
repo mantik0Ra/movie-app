@@ -17,6 +17,7 @@
 
 .btnOverview {
     background-color: transparent;
+    border-radius: 0;
     width: 100px;
     height: 30px;
     box-sizing: border-box;

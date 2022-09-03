@@ -29,7 +29,7 @@ export default function Watchlist() {
             <div className={cl.main}>
                 {key[0] ? key.map(id =>
                     <MovieContainer key={id} props={[JSON.parse(localStorage.getItem(id)).poster_path, JSON.parse(localStorage.getItem(id)).date, JSON.parse(localStorage.getItem(id)).vote_average, (JSON.parse(localStorage.getItem(id)).title), id]} />
-                ) : <div></div>}
+                ) : <div className={cl.empty}>Watchlist is empty</div>}
             </div>
         </div>
 
