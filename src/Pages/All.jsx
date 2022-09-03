@@ -27,6 +27,8 @@ export default function All() {
         setPage(page => page + 1)
     })
 
+    
+
     return (
         <main className={cl.main}>
             <div>

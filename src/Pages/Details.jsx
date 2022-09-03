@@ -12,6 +12,8 @@ export default function Details() {
 
     const params = useParams();
 
+    console.log(params.id)
+
     const [details, setDetails] = useState([]);
     const [fullCast, setFullCast] = useState([]);
     const [similarMovies, setSimilarMovies] = useState([]);
@@ -59,7 +61,7 @@ export default function Details() {
             {isLoading ? 
             <Loader/>
              : 
-             <><HeaderDetails props={{ details, fullCast }} /><Overview props={{ details }} /><MovieList title={"Similar Movies"} resp={similarMovies} /><Footer /></>}
+             <><HeaderDetails props={{ details, fullCast }} /><Overview props={{ details }} /><MovieList url={"/all"} title={"Similar Movies"} resp={similarMovies} /><Footer /></>}
 
         </div>
 

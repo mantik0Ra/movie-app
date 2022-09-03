@@ -3,6 +3,7 @@ import { Route, Routes, Navigate } from "react-router-dom";
 import Details from "../Pages/Details";
 import All from "../Pages/All";
 import Main from "../Pages/Main";
+import Watchlist from '../Pages/Watchlist';
 
 export default function AppRouter() {
   return (
@@ -11,6 +12,7 @@ export default function AppRouter() {
         <Route path="/*" element={<Navigate to="/main" replace />} />
         <Route path="/details/:id" element={<Details/>}/>
         <Route path="/all" element={<All/>}/>
+        <Route path='/watchlist' element={<Watchlist/>}/>
         
     </Routes>
   )
