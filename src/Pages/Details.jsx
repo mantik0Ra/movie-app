@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useRef } from 'react';
 import { useParams } from "react-router-dom";
 import PostService from '../API/PostService';
 import Footer from '../Components/Footer/Footer';
@@ -12,12 +13,13 @@ export default function Details() {
 
     const params = useParams();
 
-    console.log(params.id)
-
+    const container = useRef(null);
     const [details, setDetails] = useState([]);
     const [fullCast, setFullCast] = useState([]);
     const [similarMovies, setSimilarMovies] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
+
+    
 
     async function getDetails(id) {
         const response = await PostService.getDetailsByID(id);
@@ -25,7 +27,8 @@ export default function Details() {
     }
 
     useEffect(() => {
-        getDetails(params.id)
+        getDetails(params.id);
+        container.current.scrollIntoView();
     }, [params.id]);
 
     async function getFullCast(id) {
@@ -58,7 +61,7 @@ export default function Details() {
     
     
     return (
-        <div className={cl.container}>
+        <div className={cl.container} ref={container}>
             {isLoading ? 
             <Loader/>
              : 

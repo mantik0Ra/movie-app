@@ -1,5 +1,6 @@
 .movieList {
     margin-left: 56px;
+    position: relative;
     
 }
 
@@ -24,7 +25,6 @@ a {
     min-height: 400px;
     display: flex;
     gap: 16px;
-    
     overflow-x: scroll;
 
 }
@@ -36,5 +36,27 @@ a {
 .movieContainers {
     -ms-overflow-style: none;
     scrollbar-width: none;
-  }
+}
+
+
+.btnRigth {
+    top: 200px;
+    right: 0;
+    background: rgb(0, 0, 0, 0.5);
+    color: white;
+    font-size: 35px;
+    position: absolute;
+    z-index: 5;
+    width: 75px;
+}
+
+.btnLeft {
+    top: 200px;
+    background: rgb(0, 0, 0, 0.5);
+    color: white;
+    font-size: 35px;
+    position: absolute;
+    z-index: 5;
+    width: 75px;
+}
 
