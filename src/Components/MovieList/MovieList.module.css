@@ -1,5 +1,5 @@
 .movieList {
-    margin-left: 56px;
+    margin-left: 46px;
     position: relative;
     
 }
@@ -22,9 +22,10 @@ a {
 
 .movieContainers {
     width: 100%;
-    min-height: 400px;
+    min-height: 450px;
     display: flex;
     gap: 16px;
+    padding: 10px;
     overflow-x: scroll;
 
 }
@@ -41,22 +42,36 @@ a {
 
 .btnRigth {
     top: 200px;
-    right: 0;
+    right: 20px;
+}
+
+.btnLeft {
+    top: 200px;
+    left: 20px;
+}
+
+.btn:hover {
+    animation: focus .3s linear forwards;
+}
+
+.btn {
     background: rgb(0, 0, 0, 0.5);
-    color: white;
+    color: rgb(168, 156, 156);
     font-size: 35px;
     position: absolute;
     z-index: 5;
     width: 75px;
 }
 
-.btnLeft {
-    top: 200px;
-    background: rgb(0, 0, 0, 0.5);
-    color: white;
-    font-size: 35px;
-    position: absolute;
-    z-index: 5;
-    width: 75px;
+@keyframes focus {
+    0% {
+        background: rgb(0, 0, 0, 0.5);
+    }
+
+    100% {
+        background: rgb(0, 0, 0, 1);
+        color: white;
+    }
+
 }
 

@@ -27,7 +27,7 @@
     margin: 0;
     font-size: 55px;
     max-width: 400px;
-    color: #FFF;
+    color: rgb(247, 243, 243);
     text-shadow: 3px 1px 10px rgba(0, 0, 0, 1);
     min-height: 30px;
     margin-bottom: 20px;
@@ -37,15 +37,16 @@
 
 .genre {
     font-size: 20px;
-    font-weight: 400;
-    color: #FFFFFFE6;
+    font-weight: 500;
+    color: #ffffffe6;
     margin-bottom: 20px;
     text-shadow: 3px 1px 10px rgba(0, 0, 0, 1);
 }
 
 .players {
+    font-weight: 500;
     margin-bottom: 20px;
-    color: #FFFFFFE6;
+    color: #ffffffe6;
     font-size: 20px;
-    text-shadow: 3px 1px 10px rgba(0, 0, 0, 1);
+    text-shadow: 3px 1px 10px rgb(0, 0, 0, 1);
 }

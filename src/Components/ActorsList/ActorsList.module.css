@@ -1,0 +1,54 @@
+.actorsContainer {
+    display: flex;
+    height: 400px;
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    margin-top: 20px;
+    gap: 15px;
+    
+}
+
+.container {
+    position: relative;
+}
+
+.actorsContainer::-webkit-scrollbar {
+    display: none;
+}
+
+.btnRigth {
+    top: 150px;
+    right: 20px;
+    
+}
+
+.btnLeft {
+    top: 150px;
+    left: 20px;
+    
+}
+
+.btn {
+    background: rgb(0, 0, 0, 0.5);
+    color: rgb(168, 156, 156);
+    font-size: 35px;
+    position: absolute;
+    z-index: 5;
+    width: 50px;
+}
+
+.btn:hover {
+    animation: .3s linear forwards focus;
+}
+
+@keyframes focus {
+    0% {
+        background: rgb(0, 0, 0, 0.5);
+    }
+
+    100% {
+        background: rgb(0, 0, 0, 1);
+        color: white;
+    }
+}

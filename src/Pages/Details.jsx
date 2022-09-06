@@ -5,9 +5,9 @@ import PostService from '../API/PostService';
 import Footer from '../Components/Footer/Footer';
 import HeaderDetails from '../Components/HeaderDetails/HeaderDetails';
 import MovieList from '../Components/MovieList/MovieList';
-import Overview from '../Components/Overview/Overview';
 import Loader from '../Components/UI/Loader/Loader';
 import cl from "../Styles/Details.module.css"
+import AdInfo from '../Components/AdInfo/AdInfo';
 
 export default function Details() {
 
@@ -65,7 +65,7 @@ export default function Details() {
             {isLoading ? 
             <Loader/>
              : 
-             <><HeaderDetails props={{ details, fullCast }} /><Overview props={{ details }} /><MovieList url={"/all"} title={"Similar Movies"} resp={similarMovies} /><Footer /></>}
+             <><HeaderDetails props={{ details, fullCast }} /><AdInfo props={{ details }} /><MovieList url={"/all"} title={"Similar Movies"} resp={similarMovies} /><Footer /></>}
 
         </div>
 
