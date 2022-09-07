@@ -4,6 +4,7 @@ import Details from "../Pages/Details";
 import All from "../Pages/All";
 import Main from "../Pages/Main";
 import Watchlist from '../Pages/Watchlist';
+import Search from '../Pages/Search';
 
 export default function AppRouter() {
   return (
@@ -13,6 +14,7 @@ export default function AppRouter() {
         <Route path="/details/:id" element={<Details/>}/>
         <Route path="/all" element={<All/>}/>
         <Route path='/watchlist' element={<Watchlist/>}/>
+        <Route path='/search' element={<Search/>}/>
         
     </Routes>
   )

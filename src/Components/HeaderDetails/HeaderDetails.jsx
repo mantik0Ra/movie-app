@@ -12,6 +12,8 @@ export default function HeaderDetails({props}) {
         setText("In watchlist")
     }
 
+    console.log((props.fullCast.cast))
+
     return (
         <header className={cl.header} style={{ backgroundImage: props.details.backdrop_path ? `url(https://image.tmdb.org/t/p/original/${props.details.backdrop_path}` : "" }}>
             <div className={cl.main}>

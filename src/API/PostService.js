@@ -36,4 +36,10 @@ export default class PostService {
         return response
     }
 
+    static async getSearch(query) {
+        
+        const response = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=132a5d971081c7edc27050e667052636&include_adult=false&query=` + query);
+        return response
+    }
+
 }

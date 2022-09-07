@@ -1,0 +1,15 @@
+.main {
+    padding: 10px 10px 10px 56px;
+    background-color: #1D1D1D;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    justify-content: center;
+    
+}
+
+.alt {
+    color: white;
+    font-size: 25px;
+
+}
