@@ -43,6 +43,7 @@
     font-weight: 600;
     line-height: 0;
     color: #fff;
+    min-height: 30px;
     text-shadow: 3px 1px 10px rgba(0, 0, 0, 1);
 }
 

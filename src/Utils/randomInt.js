@@ -1,3 +1,3 @@
 export default  function getRandomInt(max) {
-    return Math.floor(Math.random() * max)
+    return Math.ceil(Math.random() * max)
 }

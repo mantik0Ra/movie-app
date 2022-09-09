@@ -19,8 +19,6 @@ export default function Details() {
     const [similarMovies, setSimilarMovies] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 
-    
-
     async function getDetails(id) {
         const response = await PostService.getDetailsByID(id);
         setDetails(response.data);
@@ -29,6 +27,7 @@ export default function Details() {
     useEffect(() => {
         getDetails(params.id);
         container.current.scrollIntoView();
+        getFullCast(params.id);
     }, [params.id]);
 
     async function getFullCast(id) {
@@ -36,37 +35,25 @@ export default function Details() {
         setFullCast(response.data);
     }
 
-    useEffect(() => {
-        getFullCast(params.id);
-
-    }, [params.id]);
-
     async function getSimilarMovies(id) {
         const response = await PostService.getSimilarMovies(id);
         setSimilarMovies(response.data.results);
         setIsLoading(false);
-
     }
 
     useEffect(() => {
         setIsLoading(true)
         setTimeout(() => {
             getSimilarMovies(params.id);
-            
         }, 500)
-        
     }, [params.id])
 
-    console.log(fullCast)
-    
-    
     return (
         <div className={cl.container} ref={container}>
             {isLoading ? 
             <Loader/>
              : 
              <><HeaderDetails props={{ details, fullCast }} /><AdInfo props={{ details }} /><MovieList url={"/all"} title={"Similar Movies"} resp={similarMovies} /><Footer /></>}
-
         </div>
 
     )
