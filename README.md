@@ -2,7 +2,7 @@
 
 # Movie App
 
-**may require vpn for stable operation**
+**May require VPN for stable operation**
 
 ## Stack:
 
