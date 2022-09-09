@@ -8,6 +8,8 @@ import MovieList from '../Components/MovieList/MovieList';
 import Loader from '../Components/UI/Loader/Loader';
 import cl from "../Styles/Details.module.css"
 import AdInfo from '../Components/AdInfo/AdInfo';
+import { useDispatch, useSelector } from 'react-redux';
+import { getMovieDetails, getMovieFullCast, getSimilarMovies } from '../redux/slices/detailsSlice';
 
 export default function Details() {
 
@@ -16,36 +18,27 @@ export default function Details() {
     const container = useRef(null);
     const [details, setDetails] = useState([]);
     const [fullCast, setFullCast] = useState([]);
-    const [similarMovies, setSimilarMovies] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
+    const dispatch = useDispatch();
+    const similarResult = useSelector((state) => state.details.similarMovieResult);
+    const detailsResult = useSelector((state) => state.details.detailsResult);
+    const fullCastResult = useSelector((state) => state.details.fullCastResult);
 
-    async function getDetails(id) {
-        const response = await PostService.getDetailsByID(id);
-        setDetails(response.data);
+    async function getDetailInfo(id) {
+        dispatch(getMovieFullCast(id))
+        dispatch(getSimilarMovies(id))
+        dispatch(getMovieDetails(id))
     }
 
-    useEffect(() => {
-        getDetails(params.id);
-        container.current.scrollIntoView();
-        getFullCast(params.id);
-    }, [params.id]);
-
-    async function getFullCast(id) {
-        const response = await PostService.getFullCastByID(id);
-        setFullCast(response.data);
-    }
-
-    async function getSimilarMovies(id) {
-        const response = await PostService.getSimilarMovies(id);
-        setSimilarMovies(response.data.results);
-        setIsLoading(false);
-    }
-
+    
     useEffect(() => {
         setIsLoading(true)
+        container.current.scrollIntoView();
+        getDetailInfo(params.id);
         setTimeout(() => {
-            getSimilarMovies(params.id);
-        }, 500)
+            setIsLoading(false);
+        }, 1500)
+        
     }, [params.id])
 
     return (
@@ -53,7 +46,7 @@ export default function Details() {
             {isLoading ? 
             <Loader/>
              : 
-             <><HeaderDetails props={{ details, fullCast }} /><AdInfo props={{ details }} /><MovieList url={"/all"} title={"Similar Movies"} resp={similarMovies} /><Footer /></>}
+             <><HeaderDetails props={{ detailsResult, fullCastResult }} /><AdInfo props={{ detailsResult }} /><MovieList url={"/all"} title={"Similar Movies"} resp={similarResult} /><Footer /></>}
         </div>
 
     )

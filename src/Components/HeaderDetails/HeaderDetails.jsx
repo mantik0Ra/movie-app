@@ -8,19 +8,17 @@ export default function HeaderDetails({props}) {
 
 
     function addToFavorite() {
-        localStorage.setItem(props.details.id, JSON.stringify({poster_path: props.details.poster_path, title: props.details.title, vote_average: props.details.vote_average, date: props.details.release_date}))
+        localStorage.setItem(props.detailsResult.id, JSON.stringify({poster_path: props.detailsResult.poster_path, title: props.detailsResult.title, vote_average: props.detailsResult.vote_average, date: props.detailsResult.release_date}))
         setText("In watchlist")
     }
 
-    console.log(props.details)
-
     return (
-        <header className={cl.header} style={{ backgroundImage: props.details.backdrop_path == null ? "" : `url(https://image.tmdb.org/t/p/original/${props.details.backdrop_path}` }}>
+        <header className={cl.header} style={{ backgroundImage: props.detailsResult.backdrop_path == null ? "" : `url(https://image.tmdb.org/t/p/original/${props.detailsResult.backdrop_path}` }}>
             <div className={cl.main}>
-                <h1 className={cl.title}>{props.details.title}</h1>
-                <span className={cl.genre}>Genre: {props.details.genres ? (props.details?.genres[0]?.name) : ""}</span>
-                <span className={cl.players}>Director: {props.fullCast.crew ? (props.fullCast.crew.find(director => director.known_for_department === "Directing") ? props.fullCast.crew.find(director => director.known_for_department === "Directing").name : "Unknown") : "Unknown"}</span>
-                <span className={cl.players}>Actors: {props.fullCast.cast ? (props.fullCast?.cast[0]?.name ? `${props.fullCast?.cast[0]?.name}` : "") : ""}{props.fullCast.cast ? (props.fullCast?.cast[1]?.name ? `, ${props.fullCast?.cast[1]?.name}` : "") : ""}{props.fullCast.cast ? (props.fullCast?.cast[2]?.name ? `, ${props.fullCast?.cast[2]?.name}` : "") : ""}</span>
+                <h1 className={cl.title}>{props.detailsResult.title}</h1>
+                <span className={cl.genre}>Genre: {props.detailsResult.genres ? (props.detailsResult?.genres[0]?.name) : ""}</span>
+                <span className={cl.players}>Director: {props.fullCastResult.crew ? (props.fullCastResult.crew.find(director => director.known_for_department === "Directing") ? props.fullCastResult.crew.find(director => director.known_for_department === "Directing").name : "Unknown") : "Unknown"}</span>
+                <span className={cl.players}>Actors: {props.fullCastResult.cast ? (props.fullCastResult?.cast[0]?.name ? `${props.fullCastResult?.cast[0]?.name}` : "") : ""}{props.fullCastResult.cast ? (props.fullCastResult?.cast[1]?.name ? `, ${props.fullCastResult?.cast[1]?.name}` : "") : ""}{props.fullCastResult.cast ? (props.fullCastResult?.cast[2]?.name ? `, ${props.fullCastResult?.cast[2]?.name}` : "") : ""}</span>
                 <HeaderDetailsButton call={addToFavorite} text={text}/>
             </div>
         </header>
