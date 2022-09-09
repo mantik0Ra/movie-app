@@ -10,9 +10,7 @@ export default function LookingForm({value}) {
 
     
     const dispatch = useDispatch();
-    const query = useSelector((state) => state.search.searchQuery);
-    const [search, setSearch] = useState("")
-
+    
     const handleSubmit = (e) => {
         e.preventDefault();
         dispatch(getSearch())
