@@ -1,8 +1,5 @@
 import React from 'react'
-import { useEffect } from 'react'
-import { useState } from 'react'
-import { useRef } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { clearSearchQuery, getSearch, setSearchQuery } from '../../../redux/slices/searchSlice'
 import cl from "./LookingForm.module.css"
 

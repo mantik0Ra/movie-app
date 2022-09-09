@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useRef } from 'react';
 import { useParams } from "react-router-dom";
-import PostService from '../API/PostService';
 import Footer from '../Components/Footer/Footer';
 import HeaderDetails from '../Components/HeaderDetails/HeaderDetails';
 import MovieList from '../Components/MovieList/MovieList';
@@ -16,8 +15,6 @@ export default function Details() {
     const params = useParams();
 
     const container = useRef(null);
-    const [details, setDetails] = useState([]);
-    const [fullCast, setFullCast] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const dispatch = useDispatch();
     const similarResult = useSelector((state) => state.details.similarMovieResult);

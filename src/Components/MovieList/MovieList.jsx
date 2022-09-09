@@ -1,4 +1,4 @@
-import React, { cloneElement } from 'react';
+import React from 'react';
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import MovieContainer from '../MovieContainer/MovieContainer';

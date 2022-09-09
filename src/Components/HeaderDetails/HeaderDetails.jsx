@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import HeaderDetailsButton from '../UI/HeaderDetailsButton/HeaderDetailsButton'
 import cl from "./HeaderDetails.module.css"
 
