@@ -33,6 +33,9 @@
     background: rgb(0, 0, 0, 0.5);
     color: rgb(168, 156, 156);
     font-size: 35px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
     position: absolute;
     z-index: 5;
     width: 50px;
