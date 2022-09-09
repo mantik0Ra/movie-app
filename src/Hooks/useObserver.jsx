@@ -10,6 +10,7 @@ export default function useObserver(ref, canLoad,  callback) {
         if(entries[0].isIntersecting && canLoad) {
             console.log(canLoad)
             callback()
+            
         }
     };
     observer.current = new IntersectionObserver(cb);
