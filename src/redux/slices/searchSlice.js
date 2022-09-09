@@ -25,6 +25,9 @@ export const searchSlice = createSlice({
         setSearchResult: (state, action) => {
             state.searchResult = action.payload
         },
+        clearSearchQuery: (state, action) => {
+            state.searchQuery = action.payload
+        }
     },
     extraReducers: {
         [getSearch.fulfilled]: () => console.log("fullfiled"),
@@ -34,5 +37,5 @@ export const searchSlice = createSlice({
 })
 
 
-export const { setSearchQuery, searchResult, setSearchResult, searchQuery } = searchSlice.actions
+export const { setSearchQuery, searchResult, setSearchResult, searchQuery, clearSearchQuery } = searchSlice.actions
 export default searchSlice.reducer
