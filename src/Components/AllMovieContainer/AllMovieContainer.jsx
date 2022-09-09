@@ -4,8 +4,6 @@ import cl from "./AllMovieContainer.module.css"
 
 export default function AllMovieContainer({ allTopRated }) {
 
-    console.log(allTopRated)
-
     return (
         <div className={cl.main}>
             

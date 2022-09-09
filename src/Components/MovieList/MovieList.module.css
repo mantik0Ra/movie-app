@@ -58,7 +58,10 @@ a {
     background: rgb(0, 0, 0, 0.5);
     color: rgb(168, 156, 156);
     font-size: 35px;
+    border: none;
+    border-radius: 25px;
     position: absolute;
+    cursor:pointer;
     z-index: 5;
     width: 75px;
 }
