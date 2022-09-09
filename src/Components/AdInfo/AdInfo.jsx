@@ -30,7 +30,7 @@ export default function AdInfo({ props }) {
     }
 
     async function getActors() {
-        const resp = await PostService.getFullCastByID(props.details.id);
+        const resp = await PostService.getFullCastByID(props.detailsResult.id);
         setActors(resp.data.cast)
     }
 
@@ -47,10 +47,10 @@ export default function AdInfo({ props }) {
                 <button onClick={selectSection} ref={btnActors} className={`${cl.btn} ${cl.actors}`}>Actors</button>
             </div>
             {btnOverview.current ?
-                (btnOverview.current.classList.contains(cl.anim) ? <p className={cl.overview}>{props.details.overview}</p>
+                (btnOverview.current.classList.contains(cl.anim) ? <p className={cl.overview}>{props.detailsResult.overview}</p>
                     :
                     <ActorsList actors={actors}/>)
-                : <p className={cl.overview}>{props.details.overview}</p>}
+                : <p className={cl.overview}>{props.detailsResult.overview}</p>}
         </section>
     )
 }
