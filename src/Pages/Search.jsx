@@ -1,7 +1,4 @@
-import React, { useMemo, useState } from 'react'
-import { useRef } from 'react'
-import { useEffect } from 'react'
-import PostService from '../API/PostService'
+import React from 'react'
 import AllMovieContainer from '../Components/AllMovieContainer/AllMovieContainer'
 import Footer from '../Components/Footer/Footer'
 import LookingForm from '../Components/UI/LookingForm/LookingForm'
@@ -10,12 +7,9 @@ import { useSelector } from 'react-redux'
 
 export default function Search() {
 
-    const [inputValue, setInputValue] = useState("");
     const search = useSelector((state) => state.search.searchQuery);
     const searchResult = useSelector((state) => state.search.searchResult);
 
-    
-    
   return (
     <main className={cl.main}>
         <LookingForm value={search}/>

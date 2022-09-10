@@ -13,9 +13,6 @@ export default function MovieList({resp, title, url}) {
             return container.current.scrollBy(600, 0);
         }
         container.current.scrollBy(-600, 0);
-            
-        
-        
     }
 
     return (

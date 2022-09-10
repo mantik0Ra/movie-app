@@ -1,25 +1,20 @@
-import React, { useEffect, useState, useMemo } from 'react'
+import React, { useEffect, useState } from 'react'
 import MovieContainer from '../Components/MovieContainer/MovieContainer'
 import HeaderDetailsButton from '../Components/UI/HeaderDetailsButton/HeaderDetailsButton'
 import cl from "../Styles/Watchlist.module.css"
 
 export default function Watchlist() {
 
-    const [key, setKey] = useState([])
-    const [item, setItem] = useState([])
+    const [key, setKey] = useState([]);
 
     useEffect(() => {
         setKey(Object.keys(localStorage))
     }, [])
 
-
-
     function clearAll() {
         localStorage.clear();
         setKey([])
     }
-
-
 
     return (
         <div className={cl.container}>

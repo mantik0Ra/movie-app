@@ -1,7 +1,6 @@
 import React from 'react'
-import { useEffect } from 'react'
 import { useRef, useState } from 'react'
-import PostService from '../../API/PostService'
+import { useSelector } from 'react-redux'
 import ActorsList from '../ActorsList/ActorsList'
 import cl from "./AdInfo.module.css"
 
@@ -10,7 +9,9 @@ export default function AdInfo({ props }) {
     const btnOverview = useRef(null)
     const btnActors = useRef(null)
     const [state, setState] = useState(1);
-    const [actors, setActors] = useState(1);
+    const actors = useSelector((state) => state.details.fullCastResult.cast)
+    const detailsResult = useSelector((state) => state.details.detailsResult)
+    
 
     function selectSection(e) {
         setState(state => state + 1)
@@ -29,16 +30,7 @@ export default function AdInfo({ props }) {
 
     }
 
-    async function getActors() {
-        const resp = await PostService.getFullCastByID(props.detailsResult.id);
-        setActors(resp.data.cast)
-    }
 
-    useEffect(() => {
-        getActors();
-    }, [])
-
-    
 
     return (
         <section className={cl.sectionOverview}>
@@ -47,10 +39,10 @@ export default function AdInfo({ props }) {
                 <button onClick={selectSection} ref={btnActors} className={`${cl.btn} ${cl.actors}`}>Actors</button>
             </div>
             {btnOverview.current ?
-                (btnOverview.current.classList.contains(cl.anim) ? <p className={cl.overview}>{props.detailsResult.overview}</p>
+                (btnOverview.current.classList.contains(cl.anim) ? <p className={cl.overview}>{detailsResult.overview ? detailsResult.overview : "Review not available at the moment"}</p>
                     :
                     <ActorsList actors={actors}/>)
-                : <p className={cl.overview}>{props.detailsResult.overview}</p>}
+                : <p className={cl.overview}>{detailsResult.overview}</p>}
         </section>
     )
 }

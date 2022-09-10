@@ -15,7 +15,6 @@ export default function AppRouter() {
         <Route path="/all" element={<All/>}/>
         <Route path='/watchlist' element={<Watchlist/>}/>
         <Route path='/search' element={<Search/>}/>
-        
     </Routes>
   )
 }
