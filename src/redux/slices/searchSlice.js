@@ -9,7 +9,7 @@ const initialState = {
 
 
 
-export const getSearch = createAsyncThunk("getSearch", async (_, { rejectWithValue, dispatch, getState }) => {
+export const getSearch = createAsyncThunk("getSearch", async (_, { dispatch, getState }) => {
     const query = getState().search.searchQuery
     const res = await PostService.getSearch(query);
     dispatch(setSearchResult(res.data.results))

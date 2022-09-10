@@ -11,9 +11,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getMovieDetails, getMovieFullCast, getSimilarMovies } from '../redux/slices/detailsSlice';
 
 export default function Details() {
-
     const params = useParams();
-
     const container = useRef(null);
     const [isLoading, setIsLoading] = useState(false);
     const dispatch = useDispatch();
@@ -27,15 +25,13 @@ export default function Details() {
         dispatch(getMovieDetails(id))
     }
 
-    
     useEffect(() => {
         setIsLoading(true)
         container.current.scrollIntoView();
         getDetailInfo(params.id);
-        setTimeout(() => {
-            setIsLoading(false);
-        }, 1500)
-        
+        if(getMovieDetails.fulfilled) {
+            setIsLoading(false)
+        }
     }, [params.id])
 
     return (

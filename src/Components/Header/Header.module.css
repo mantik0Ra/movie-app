@@ -70,14 +70,16 @@
 }
 
 .button:hover {
-    animation: btn .3s linear forwards;
+    animation: btn .1s linear forwards;
 }
+
+
 
 @keyframes btn {
     0% {
         transform: scale(1);
     }
     100% {
-        transform: scale(1.1);
+        transform: scale(1.03);
     }
 }

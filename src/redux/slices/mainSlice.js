@@ -6,15 +6,14 @@ const initialState = {
     topRatedResult: [],
 }
 
-export const getNowPlaying = createAsyncThunk("getNowPlaying", async (_, { rejectWithValue, dispatch, getState }) => {
+export const getNowPlaying = createAsyncThunk("getNowPlaying", async (_, { dispatch }) => {
     const res = await PostService.getNowPlaying();
     dispatch(setNowPlayingResult(res.data.results))
     
 })
 
-export const getTopRated = createAsyncThunk("getTopRated", async (_, { rejectWithValue, dispatch, getState }) => {
+export const getTopRated = createAsyncThunk("getTopRated", async (_, { dispatch }) => {
     const res = await PostService.getTopRated();
-    console.log(res.data.results)
     dispatch(setTopRatedResult(res.data.results))
     
 })
@@ -29,6 +28,11 @@ export const mainSlice = createSlice({
         setTopRatedResult: (state, action) => {
             state.topRatedResult = action.payload
         },
+    },
+    extraReducers: {
+        [getNowPlaying.fulfilled]: () => console.log("fullfiled"),
+        [getNowPlaying.pending]: () => console.log("pending"),
+        [getNowPlaying.rejected]: () => console.log("rejected"),
     },
 })
 
