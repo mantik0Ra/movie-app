@@ -13,7 +13,7 @@ export default function Search() {
   return (
     <main className={cl.main}>
         <LookingForm value={search}/>
-        {searchResult.length >= 1 ? <AllMovieContainer allTopRated={searchResult}/> : <div className={cl.alt}>Ничего не найдено</div>}
+        {searchResult.length >= 1 ? <AllMovieContainer allTopRated={searchResult}/> : <div className={cl.alt}>No results</div>}
         <Footer/>
     </main>
   )

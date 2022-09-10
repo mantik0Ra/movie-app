@@ -29,9 +29,12 @@ export default function Details() {
         setIsLoading(true)
         container.current.scrollIntoView();
         getDetailInfo(params.id);
-        if(getMovieDetails.fulfilled) {
-            setIsLoading(false)
-        }
+        setTimeout(() => {
+            if(getMovieDetails.fulfilled) {
+                setIsLoading(false)
+            }
+        }, 1500)
+        
     }, [params.id])
 
     return (
