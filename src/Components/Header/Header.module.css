@@ -40,10 +40,10 @@
 
 .title {
     font-size: 56px;
-    font-weight: 600;
-    line-height: 0;
-    color: #fff;
+    max-width: 1000px;
     min-height: 30px;
+    font-weight: 600;
+    color: #fff;
     text-shadow: 3px 1px 10px rgba(0, 0, 0, 1);
 }
 
@@ -81,5 +81,11 @@
     }
     100% {
         transform: scale(1.03);
+    }
+}
+
+@media (max-width: 830px) {
+    .container {
+        margin-left: 100px;
     }
 }

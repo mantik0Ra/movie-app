@@ -62,4 +62,12 @@
 
 }
 
+@media (max-width: 815px) {
+    .sectionOverview {
+        padding-left: 60px;
+        padding-right: 0px;
+        
+    }
+}
+
 
